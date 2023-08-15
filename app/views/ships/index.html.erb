@@ -2,14 +2,14 @@
   <div class="container-banner">
     <h1>Infinity Fleet Rentals</h1>
     <p>Your Odyssey Among the Stars Begins Here!</p>
-    <%= link_to "See all ships", ships_path, class: 'btn btn-flat'  %>
+    <%= link_to "Rent out your own spaceship", ships_path, class: 'btn btn-flat'  %>
   </div>
 </div>
 <div class="container">
   <div class="cards">
-    <% @ships.first(6).each do |ship| %>
+    <% @ships.each do |ship| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%="http://source.unsplash.com/featured/?#{ship.name}>&#{rand(1000)}" %>)">
-        <%= link_to ship.name, ship_path(ship), class: "card-link" %>
+        <%= link_to ship.name, ships_path, class: "card-link" %>
       </div>
     <% end %>
   </div>
