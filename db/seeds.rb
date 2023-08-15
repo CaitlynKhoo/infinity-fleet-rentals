@@ -60,8 +60,10 @@ User.create!(
   end
 end
 
+users = User.all
+
 20.times do |i|
-  user_id = i + 1
+  user_id = users[i].id
   ship = Ship.new(
     user_id: user_id,
     description: Faker::Lorem.paragraph_by_chars(number: rand(1000..2200)),
@@ -78,16 +80,16 @@ end
   end
 end
 
+ships = Ship.all
+
 20.times do |i|
-  id = i+1
   start_date = Date.today + rand(1..10)
   end_date = Date.today + rand(11..20)
   status = "pending"
-  user_id = rand(1..20)
-  ship_id = rand(1..20)
+  user_id = users.sample.id
+  ship_id = ships.sample.id
 
   booking = Booking.new(
-    id: id,
     start_date: start_date,
     end_date: end_date,
     status: status,
