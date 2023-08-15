@@ -5,7 +5,6 @@ Booking.destroy_all
 Ship.destroy_all
 User.destroy_all
 
-
 User.create!(
   email: "Barry@infinityfleetrentals.com",
   password: "password1",
@@ -67,9 +66,10 @@ users = User.all
   user_id = users[i].id
   ship = Ship.new(
     user_id: user_id,
-    description: Faker::Lorem.paragraph_by_chars(number: rand(50..220)),
+    description: Faker::Lorem.paragraph_by_chars(number: rand(1000..2200)),
     capacity: rand(1..500),
     price_per_day: rand(50..500),
+    rating: rand(1.0..10.0),
     name: Faker::Movies::StarWars.vehicle
   )
 

@@ -56,11 +56,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_044855) do
 
   create_table "ships", force: :cascade do |t|
     t.string "name"
+    t.string "location"
     t.string "description"
     t.integer "capacity"
-    t.float "price_per_day"
+    t.integer "price_per_day"
     t.string "ship_class"
     t.string "ship_origin"
+    t.float "rating"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
