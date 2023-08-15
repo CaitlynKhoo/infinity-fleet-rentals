@@ -11,8 +11,20 @@
   width: 600px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 8px;
+  margin: 4px;
 }
 
 .description {
   width: 120%;
+}
+
+.big-display {
+  display: flex;
+  padding: 4px;
+  margin: 10px;
+  border-radius: 5px;
+  border: solid;
+  align-items: center;
+  justify-content: center;
+
 }
