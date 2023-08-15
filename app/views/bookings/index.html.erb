@@ -1,8 +1,19 @@
 <div class="container">
-<% if user_signed_in? %>
-<% @ships = Ship.where("user_id = ?", current_user.id)%>
-  <% if @ships.count > 0 %>
-  <% render 'dibs' %>
+  <%# if user_signed_in?
+  current_user.id %>
+  <%# @ships = Ship.where("user_id = ?", 20)%>
+    <%# if @ships.count > 0 %>
+    <%#= @ships %>
+    <%# end %>
+    <%# end %>
 
+  <% @user.bookings.each do |booking| %>
+    <p><%= booking.ship.description %></p>
+  <% end %>
+
+
+  <% @user.ships.each do |ship| %>
+    <p><%= ship.description %></p>
+  <% end %>
 
 </div>
