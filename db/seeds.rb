@@ -1,4 +1,4 @@
-
+require 'date'
 require 'faker'
 
 User.destroy_all
@@ -41,7 +41,15 @@ User.create!(
 
 20.times do
   email = Faker::Internet.unique.email
+  name = Faker::Name.name
   user = User.new(email: email)
+  password = "123123"
+  phone_number = Faker::PhoneNumber
+  address = Faker::Address
+  date_of_birth = Faker::Date.birthday
+
+  user = User.new(email: email, date_of_birth: date_of_birth, address: address, name: name, phone_number: phone_number, password: password, password_confirmation: password)
+
 
   if user.save
     puts "Created user: #{user.email}"
@@ -63,5 +71,29 @@ end
     puts "Created ship with ID #{ship.id} and user_id #{user_id}"
   else
     puts "Failed to create ship - Errors: #{ship.errors.full_messages.join(', ')}"
+  end
+end
+
+20.times do |i|
+  id = i+1
+  start_date = Date.today + rand(1..10)
+  end_date = Date.today + rand(11..20)
+  status = "pending"
+  user_id = rand(1..20)
+  ship_id = rand(1..20)
+
+  booking = Booking.new(
+    id: id,
+    start_date: start_date,
+    end_date: end_date,
+    status: status,
+    user_id: user_id,
+    ship_id: ship_id
+  )
+
+  if booking.save
+    puts "Created booking with ID #{booking.id} for user_id #{user_id} and ship_id #{ship_id}"
+  else
+    puts "Failed to create booking - Errors: #{booking.errors.full_messages.join(', ')}"
   end
 end
