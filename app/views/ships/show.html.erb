@@ -21,7 +21,12 @@
 <div class="widget">
   <div class='btn btn-primary' style="width:100%" disabled>Book Here</div>
     <br>
+    Rating: <%= @ship.rating.round(1)%>
+    <br><br>
+    Capacity: <%= @ship.capacity%>
+    <br><br>
     Price per day: $<%= @ship.price_per_day%>
+    <br><br>
     <%= simple_form_for [@ship, @booking] do |f| %>
     <%= f.input :start_date, default: Date.tomorrow %>
     <%= f.input :end_date, default: (Date.today + 8) %>

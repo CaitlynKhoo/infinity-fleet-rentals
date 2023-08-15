@@ -8,6 +8,7 @@ class CreateShips < ActiveRecord::Migration[7.0]
       t.integer :price_per_day
       t.string :ship_class
       t.string :ship_origin
+      t.float :rating
       t.references :user, null: false, foreign_key: true
       t.timestamps
     end

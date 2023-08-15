@@ -67,6 +67,7 @@ end
     description: Faker::Lorem.paragraph_by_chars(number: rand(1000..2200)),
     capacity: rand(1..500),
     price_per_day: rand(50..500),
+    rating: rand(1.0..10.0),
     name: Faker::Movies::StarWars.vehicle
   )
 
