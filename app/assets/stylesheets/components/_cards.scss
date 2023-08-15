@@ -6,9 +6,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  background-color: rgba(229, 229, 229, 0.2);
   font-size: 24px;
   font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -18,7 +19,7 @@
 .card-product {
   overflow: hidden;
   height: 120px;
-  background: #14213d;;
+  background-color: rgba(229, 229, 229, 0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
@@ -63,10 +64,12 @@
 
 .card-trip {
   overflow: hidden;
-  background: white;
+  background-color:#14213d;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 20px;
   position: relative;
+  border-radius: 15px;
+  backdrop-filter: blur(20px);
 }
 
 .card-trip > img {
@@ -79,12 +82,14 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -95,7 +100,7 @@
   align-items: flex-end;
   position: relative;
   min-height: 100px;
-  background-color: #14213d;
+
   color: #fca311;
 }
 

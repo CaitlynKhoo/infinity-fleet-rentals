@@ -11,7 +11,8 @@ User.create!(
   name: "Admin Barry",
   phone_number: "123-456-7891",
   address: "Address One",
-  date_of_birth: Date.new(1990, 1, 1)
+  date_of_birth: Date.new(1990, 1, 1),
+  #user_img: "https://avatars.githubusercontent.com/u/138180537?v=4"
 )
 
 User.create!(
@@ -20,7 +21,8 @@ User.create!(
   name: "Admin Karthika",
   phone_number: "123-456-7892",
   address: "Address Two",
-  date_of_birth: Date.new(1990, 2, 2)
+  date_of_birth: Date.new(1990, 2, 2),
+  #user_img: "https://avatars.githubusercontent.com/u/129238177?v=4"
 )
 
 User.create!(
@@ -29,7 +31,8 @@ User.create!(
   name: "Admin Caitlyn",
   phone_number: "123-456-7893",
   address: "Address Three",
-  date_of_birth: Date.new(1990, 3, 3)
+  date_of_birth: Date.new(1990, 3, 3),
+  #user_img: "https://avatars.githubusercontent.com/u/138352657?v=4"
 )
 
 User.create!(
@@ -38,7 +41,8 @@ User.create!(
   name: "Admin kostas",
   phone_number: "123-456-7894",
   address: "Address Four",
-  date_of_birth: Date.new(1990, 4, 4)
+  date_of_birth: Date.new(1990, 4, 4),
+  #user_img: "https://avatars.githubusercontent.com/u/133198548?v=4"
 )
 
 20.times do
@@ -51,7 +55,6 @@ User.create!(
   date_of_birth = Faker::Date.birthday
 
   user = User.new(email: email, date_of_birth: date_of_birth, address: address, name: name, phone_number: phone_number, password: password, password_confirmation: password)
-
 
   if user.save
     puts "Created user: #{user.email}"
@@ -82,7 +85,7 @@ end
 
 ships = Ship.all
 
-20.times do |i|
+20.times do
   start_date = Date.today + rand(1..10)
   end_date = Date.today + rand(11..20)
   status = "pending"

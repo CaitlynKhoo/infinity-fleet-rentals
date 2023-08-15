@@ -6,6 +6,7 @@
   margin-top: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,4 +15,23 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.btn-flat-nav {
+  color: #fca311;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #14213d;
+  transition: background 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.btn-flat-nav:hover {
+  background: #c27b09;
+  color: #14213d;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid #14213d;
+  margin-left: 5px;
 }

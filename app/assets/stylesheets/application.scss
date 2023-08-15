@@ -8,11 +8,16 @@
 @import "font-awesome";
 
 // Your CSS partials
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,800;1,400&family=Neuton&family=Space+Mono&display=swap');
 @import "components/index";
 @import "pages/index";
 @import "components/banner";
 @import "components/cards";
 @import "components/grid";
 @import "components/buttons";
-@import "components/subheaderdevider"
-@import "components/show_display";
+@import "components/subheaderdevider";
+@import "components/background";
+@import "components/showdisplay";
+
+// commented the last import out because its giving me a weird error
+// its expecting media queries but even after adding them it still asks for them
