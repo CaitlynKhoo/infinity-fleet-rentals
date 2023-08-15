@@ -1,9 +1,9 @@
 require 'date'
 require 'faker'
 
-User.destroy_all
-Ship.destroy_all
 Booking.destroy_all
+Ship.destroy_all
+User.destroy_all
 
 User.create!(
   email: "Barry@infinityfleetrentals.com",
@@ -64,7 +64,7 @@ end
   user_id = i + 1
   ship = Ship.new(
     user_id: user_id,
-    description: Faker::Lorem.paragraph_by_chars(number: rand(50..220)),
+    description: Faker::Lorem.paragraph_by_chars(number: rand(1000..2200)),
     capacity: rand(1..500),
     price_per_day: rand(50..500),
     name: Faker::Movies::StarWars.vehicle
