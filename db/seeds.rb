@@ -2,6 +2,8 @@ require 'date'
 require 'faker'
 
 User.destroy_all
+Ship.destroy_all
+Booking.destroy_all
 
 User.create!(
   email: "Barry@infinityfleetrentals.com",
@@ -65,7 +67,8 @@ end
     name: Faker::Name.female_first_name,
     description: Faker::Lorem.paragraph_by_chars(number: rand(50..220)),
     capacity: rand(1..500),
-    price_per_day: rand(50..500)
+    price_per_day: rand(50..500),
+    name: Faker::Movies::StarWars.vehicle
   )
 
   if ship.save

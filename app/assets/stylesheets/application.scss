@@ -10,39 +10,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 280px;
-  width: 280px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  padding: 10px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.box {
-  padding: 30px;
-  display:flex;
-  border-radius: 5;
-  border: solid;
-  margin: 30px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.big-display {
-  display: flex;
-  border-radius: 5;
-  border: solid;
-  margin: 30px;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-between;
-}
+@import "components/banner.scss";
+@import "components/cards";
+@import "components/grid";
+@import "components/buttons";

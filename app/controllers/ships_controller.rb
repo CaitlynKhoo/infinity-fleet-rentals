@@ -1,4 +1,4 @@
-class SpaceshipsController < ApplicationController
+class ShipsController < ApplicationController
 
   def index
     @ships = Ship.all
