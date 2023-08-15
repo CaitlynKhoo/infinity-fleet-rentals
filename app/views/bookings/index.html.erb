@@ -1,0 +1,8 @@
+<div class="container">
+<% if user_signed_in? %>
+<% @ships = Ship.where("user_id = ?", current_user.id)%>
+  <% if @ships.count > 0 %>
+  <% render 'dibs' %>
+
+
+</div>
