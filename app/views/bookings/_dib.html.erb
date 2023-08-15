@@ -1,15 +1,12 @@
 <div class="container">
-<h1 class="mt-4">My Dibs</h1>
   <div class="cards mt-4">
-    <% @bookings.each do |booking| %>
     <div class="card-trip">
       <%= image_tag "spaceship2.jpeg" %>
       <div class="card-content">
           <h2>Ship name here</h2>
-          <p>Description here?</p>
+          <p><%= booking.ship.description %></p>
           <p><%= booking.start_date %> - <%= booking.end_date %></p>
       </div>
     </div>
-    <% end %>
   </div>
 </div>
