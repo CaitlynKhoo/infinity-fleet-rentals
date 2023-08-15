@@ -62,6 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_044855) do
     t.integer "price_per_day"
     t.string "ship_class"
     t.string "ship_origin"
+    t.float "rating"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
