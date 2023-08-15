@@ -62,6 +62,7 @@ end
   user_id = i + 1
   ship = Ship.new(
     user_id: user_id,
+    name: Faker::Name.female_first_name,
     description: Faker::Lorem.paragraph_by_chars(number: rand(50..220)),
     capacity: rand(1..500),
     price_per_day: rand(50..500)
