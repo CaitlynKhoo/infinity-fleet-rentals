@@ -2,19 +2,27 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  margin-right: 20px;
+  margin-left: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .banner h1 {
-  margin: 0;
-  color: white;
+  margin-left: 30px;
+  color: #14213d;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
 }
 
 .banner p {
+  margin-left: 30px;
   font-size: 20px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner .btn.btn-flat {
+ margin-left: 30px;
 }
