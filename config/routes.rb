@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:update, :index ]
-  get 'my_spaceships', to: 'spaceships#user_index'
+  get 'my_ships', to: 'ships#user_index'
 end

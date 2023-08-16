@@ -1,16 +1,16 @@
 class BookingsController < ApplicationController
 
   def create
-    raise
-    @ship = Ship.find(params[:id])
+    @ship = Ship.find(params[:ship_id])
     @booking = Booking.new(booking_params)
     @booking.status = "pending"
     @booking.ship = @ship
-    @booking.user_id =
+    @booking.user = current_user
+    @user = current_user
     if @booking.save
-      redirect_to lists_path(@list)
+      redirect_to bookings_path(@user)
     else
-      render :new, status: :unprocessable_entity
+      render "ships/show", status: :unprocessable_entity
     end
 
   end
