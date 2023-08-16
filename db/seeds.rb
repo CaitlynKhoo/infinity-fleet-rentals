@@ -4,6 +4,7 @@ require 'faker'
 Booking.destroy_all
 Ship.destroy_all
 User.destroy_all
+puts "Destroyed all Bookings, Ships and Users!"
 
 User.create!(
   email: "Barry@infinityfleetrentals.com",
