@@ -1,22 +1,28 @@
 require 'date'
 require 'faker'
+require 'uri'
 
 Booking.destroy_all
 Ship.destroy_all
 User.destroy_all
 puts "Destroyed all Bookings, Ships and Users!"
 
-User.create!(
+barry_acc = User.new(
   email: "Barry@infinityfleetrentals.com",
   password: "password1",
   name: "Admin Barry",
   phone_number: "123-456-7891",
   address: "Address One",
   date_of_birth: Date.new(1990, 1, 1),
-  #user_img: "https://avatars.githubusercontent.com/u/138180537?v=4"
+  # user_img: "https://avatars.githubusercontent.com/u/138180537?v=4"
 )
 
-User.create!(
+photo_url = "https://avatars.githubusercontent.com/u/138180537?v=4"
+file = URI.open(photo_url)
+barry_acc.user_img.attach(io: file, filename: 'user.jpeg', content_type: "image/jpeg")
+barry_acc.save
+
+karthika_acc = User.new(
   email: "karthika@infinityfleetrentals.com",
   password: "password2",
   name: "Admin Karthika",
@@ -26,7 +32,12 @@ User.create!(
   #user_img: "https://avatars.githubusercontent.com/u/129238177?v=4"
 )
 
-User.create!(
+photo_url = "https://avatars.githubusercontent.com/u/129238177?v=4"
+file = URI.open(photo_url)
+karthika_acc.user_img.attach(io: file, filename: 'user.jpeg', content_type: "image/jpeg")
+karthika_acc.save
+
+caitlyn_acc =User.new(
   email: "Caitlyn@infinityfleetrentals.com",
   password: "password3",
   name: "Admin Caitlyn",
@@ -36,7 +47,13 @@ User.create!(
   #user_img: "https://avatars.githubusercontent.com/u/138352657?v=4"
 )
 
-User.create!(
+
+photo_url = "https://avatars.githubusercontent.com/u/138352657?v=4"
+file = URI.open(photo_url)
+caitlyn_acc.user_img.attach(io: file, filename: 'user.jpeg', content_type: "image/jpeg")
+caitlyn_acc.save
+
+kostas_acc = User.new(
   email: "Kostas@infinityfleetrentals.com",
   password: "password4",
   name: "Admin kostas",
@@ -45,6 +62,11 @@ User.create!(
   date_of_birth: Date.new(1990, 4, 4),
   #user_img: "https://avatars.githubusercontent.com/u/133198548?v=4"
 )
+
+photo_url = "https://avatars.githubusercontent.com/u/133198548?v=4"
+file = URI.open(photo_url)
+kostas_acc.user_img.attach(io: file, filename: 'user.jpeg', content_type: "image/jpeg")
+kostas_acc.save
 
 20.times do
   email = Faker::Internet.unique.email
@@ -139,7 +161,7 @@ descriptions = [
     # description: Faker::Lorem.paragraph_by_chars(number: rand(1000..2200)),
     capacity: rand(1..500),
     price_per_day: rand(5..50) * 10,
-    rating: rand(1.0..10.0),
+    rating: rand(1.0..5.0),
   )
   ship.name = ship_names[i-1]
   ship.picture_1 = ship_pictures_1[i-1]

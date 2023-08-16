@@ -27,10 +27,10 @@
             </li>
             <% if user_signed_in? %>
               <li class="nav-item dropdown">
-                <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+                <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= cl_image_path(current_user.user_img.key) %>"/>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">View my bookings</a>
-                  <a class="dropdown-item" href="#">View my Listings</a>
+                  <%= link_to "View my bookings", bookings_path, class: 'dropdown-item' %>
+                  <%= link_to "View my ships", bookings_path, class: 'dropdown-item' %>
                   <a class="dropdown-item" data-turbo-method="delete" href="<%= destroy_user_session_path %>">Log out</a>
                 </div>
               </li>

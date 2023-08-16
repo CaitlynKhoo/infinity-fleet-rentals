@@ -5,17 +5,21 @@
 }
 
 .widget {
-  border: solid;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   width: 600px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   padding: 8px;
   margin: 4px;
+  background-color: #fca311;
 }
 
-.description {
-  width: 120%;
+.description-widget {
+width: 120%;
+
+  h2 {
+    color: #fca311;
+  }
 }
 
 .big-display {
@@ -31,4 +35,8 @@
     flex-direction: column;
     text-align: center;
   }
+}
+
+#show-page-header {
+  color: #fca311;
 }

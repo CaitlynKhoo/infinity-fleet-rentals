@@ -1,3 +1,4 @@
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -35,6 +36,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  position: absolute;
 }
 
 .card-product p {
@@ -46,7 +48,8 @@
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding: 10px;
+  position: relative;
 }
 
 .card-link {
@@ -60,10 +63,9 @@
   color: #fca311; /* Add a background color on hover for visual feedback */
 }
 
-
 .card-trip {
   overflow: hidden;
-  background-color:#14213d;
+  background-color:#fca311;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 20px;
   position: relative;
@@ -81,7 +83,6 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
-
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -89,24 +90,30 @@
   font-size: 12px;
   opacity: .7;
   margin: 0;
-
-}
-
-.card-trip .card-content {
-  padding: 16px;
   font-family: 'Montserrat', sans-serif;
 }
 
+.card-trip-pricing {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fca311;
+  border-radius: 15px;
+  padding: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
 
-.card-trip .card-trip-infos {
-  padding: 16px;
+.card-trip-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
+}
+
+.card-trip .card-trip-infos {
+  padding: 10px;
   position: relative;
   min-height: 100px;
-
-  color: #fca311;
+  color: #14213d;
 }
 
 .card-trip-infos .card-trip-user {

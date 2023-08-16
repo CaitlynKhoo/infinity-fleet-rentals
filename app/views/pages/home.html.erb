@@ -12,14 +12,22 @@
   <div class="cards">
     <% @ships.first(6).each do |ship| %>
       <div class="card-trip">
+        <h2 class="card-trip-pricing">$<%=ship.price_per_day.to_i%></h2>
         <%= link_to "", ship_path(ship), class: 'card-link' %>
         <%= image_tag ship.picture_1 %>
         <div class="card-trip-infos">
-          <div>
+          <div class="card-trip-header">
             <h2><%= ship.name %></h2>
-            <p><%= truncate(ship.description, length: 20) %></p>
+            <div class="d-flex">
+              <% ship.rating.round do %>
+                <i class="fa-solid fa-star"></i>
+              <% end %>
+              <% (5 - ship.rating.round).times do %>
+                <i class="fa-regular fa-star"></i>
+              <% end %>
+            </div>
           </div>
-          <h2 class="card-trip-pricing">$<%=ship.price_per_day.to_i%></h2>
+          <p><%= truncate(ship.description, length:100) %></p>
         </div>
       </div>
     <% end %>
