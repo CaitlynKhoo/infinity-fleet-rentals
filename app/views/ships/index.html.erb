@@ -1,0 +1,25 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://wallpaperset.com/w/full/0/6/c/336515.jpg')">
+  <div class="container-banner">
+    <h1>Infinity Fleet Rentals Offerings</h1>
+    <p>Discover our captivating offers and embark on cosmic voyages now!</p>
+    <%= link_to "Rent out your own spaceship", ships_path, class: 'btn btn-flat', id: 'button-banner' %>
+  </div>
+</div>
+<div class="container">
+  <div class="cards">
+    <% @ships.each do |ship| %>
+      <div class="card-trip">
+        <%= link_to "", ship_path(ship), class: 'card-link' %>
+        <%= image_tag "http://source.unsplash.com/featured/?#{ship.name}>&#{rand(1000)}" %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= ship.name %></h2>
+            <p><%= truncate(ship.description, length: 20) %></p>
+          </div>
+          <h2 class="card-trip-pricing">$<%=ship.price_per_day.to_i %></h2>
+          <h2 class="card-trip-pricing">⭐️ <%=ship.rating.to_i%></h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

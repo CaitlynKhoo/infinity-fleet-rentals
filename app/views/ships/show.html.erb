@@ -1,0 +1,37 @@
+<div class="navbar"></div>
+  <div class="container">
+    <br>
+  <div style="font-size:40px"><center> <strong><%= @ship.name%></strong></h1>
+  </div>
+
+<div class="big-display">
+  <div class="card-category" style="width: 300px; height: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://tinyurl.com/yjm5jvcn)"></div>
+  <div class="card-category" style="width: 300px; height: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://tinyurl.com/5ypy83b9)"></div>
+  <div class="card-category" style="width: 300px; height: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://tinyurl.com/59zd62tr)"></div>
+</div>
+
+  <div class="box">
+    <div class="description widget">
+      <h2>Description</h2>
+      <p><%= @ship.description%></h1><p>
+    </div>
+  <div class="widget">
+    <div class='btn btn-primary' style="width:100%" disabled>Book Here</div>
+      <br>
+      Rating: <%= @ship.rating.round(1)%>
+      <br><br>
+      Capacity: <%= @ship.capacity%>
+      <br><br>
+      Price per day: $<%= @ship.price_per_day%>
+      <br><br>
+      <%= simple_form_for [@ship, @booking] do |f| %>
+        <%= f.input :start_date, default: Date.tomorrow %>
+        <%= f.input :end_date, default: (Date.today + 8) %>
+        <br>
+        <em><strong>Total price to be added here!</em></strong>
+        <%= f.submit 'Submit', class: 'btn btn-info mt-2', style: "width:100%"  %>
+      <% end %>
+      <%= link_to "Home", ships_path, class: "btn btn-dark mt-3 mt-2", style: "width:100%" %>
+    </div>
+  </div>
+</div>
