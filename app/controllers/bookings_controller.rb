@@ -1,14 +1,17 @@
 class BookingsController < ApplicationController
 
+  def index
+    @user = current_user
+  end
+
   def create
     @ship = Ship.find(params[:ship_id])
     @booking = Booking.new(booking_params)
     @booking.status = "pending"
     @booking.ship = @ship
     @booking.user = current_user
-    @user = current_user
     if @booking.save
-      redirect_to bookings_path(@user)
+      redirect_to bookings_path
     else
       render "ships/show", status: :unprocessable_entity
     end
