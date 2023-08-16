@@ -3,3 +3,7 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
+
+
+import BookingPriceController from "./controllers/booking_price_controller.js"
+Stimulus.register("booking-price", BookingPriceController)

@@ -14,7 +14,7 @@
       <div class="card-trip">
         <h2 class="card-trip-pricing">$<%=ship.price_per_day.to_i%></h2>
         <%= link_to "", ship_path(ship), class: 'card-link' %>
-        <%= image_tag "http://source.unsplash.com/featured/?#{ship.name}>&#{rand(1000)}" %>
+        <%= image_tag ship.picture_1 %>
         <div class="card-trip-infos">
           <div class="card-trip-header">
             <h2><%= ship.name %></h2>
