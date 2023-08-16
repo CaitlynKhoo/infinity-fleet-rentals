@@ -6,10 +6,10 @@
 
 .widget {
   border: solid;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   width: 600px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   padding: 8px;
   margin: 4px;
 }
@@ -27,4 +27,8 @@
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
 }

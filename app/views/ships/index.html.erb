@@ -17,6 +17,7 @@
             <p><%= truncate(ship.description, length: 20) %></p>
           </div>
           <h2 class="card-trip-pricing">$<%=ship.price_per_day.to_i %></h2>
+          <h2 class="card-trip-pricing">⭐️ <%=ship.rating.to_i%></h2>
         </div>
       </div>
     <% end %>

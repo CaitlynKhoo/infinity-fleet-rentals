@@ -2,7 +2,6 @@
 margin: 20px;
 text-align: center;
 align-content: center;
-
 }
 .subheader-page {
   text-align: center;
@@ -18,8 +17,9 @@ align-content: center;
   padding: 10px 20px;
   border-radius: 15px;
   color: #14213d;
-  font-size: 30px;
-  font-weight: bolder;
+  font-size: 24px;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .subheader-page::after {
@@ -28,7 +28,7 @@ align-content: center;
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 50px;
+  width: 500px;
   height: 2px;
   background-color: #fca311;
 }
