@@ -1,7 +1,7 @@
 <div class="container">
   <br>
   <div style="font-size:40px"><center>
-      <h1 id="show-page-header"><strong><%= @ship.name%></strong></h1>
+      <h1 class="show-page-header"><strong><%= @ship.name%></strong></h1>
     </div>
     <div class="big-display">
       <div class="card-category" style="width: 300px; height: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://tinyurl.com/yjm5jvcn)"></div>
@@ -15,20 +15,29 @@
           <p>
           </div>
           <div class="widget" data-controller="booking-price" data-booking-price-day-value="<%= @ship.price_per_day %>">
-  <!--<div class='btn btn-primary' style="width:100%" disabled>Book Here</div>
+            <!--<div class='btn btn-primary' style="width:100%" disabled>Book Here</div>
     <br>-->
-    <div >
-      Price per day: $ <%= @ship.price_per_day %>
-    </div>
-      <%= simple_form_for [@ship, @booking] do |f| %>
-      <%= f.input :start_date, as: :date, default: Date.tomorrow , html5: true, input_html: { data: { booking_price_target: "start" , action: "change->booking-price#pricing"  } }%>
-      <%= f.input :end_date, as: :date, default: (Date.today + 8), html5: true, input_html: { data: { booking_price_target: "end" , action: "change->booking-price#pricing" } } %>
-      <br>
-      <div>Total price: $<span data-booking-price-target="total">0.00</span>
+            <div >
+              <h3 style="text-align: center;">Book your ship</h3>
+              <p class="booking-form-text"> Rating:
+                <% @ship.rating.round.times do %>
+                  <i class="fa-solid fa-star"></i>
+                <% end %>
+                <% (5 - @ship.rating.round).times do %>
+                  <i class="fa-regular fa-star"></i>
+                <% end %>
+              </p>
+              <p class="booking-form-text"> capacity: <strong><%= @ship.capacity %> Humanoids</strong></p>
+              <p class="booking-form-text"> Price per day: <strong>$ <%= @ship.price_per_day %></strong></p>
+            </div>
+            <%= simple_form_for [@ship, @booking] do |f| %>
+              <%= f.input :start_date, as: :date, default: Date.tomorrow , html5: true, input_html: { data: { booking_price_target: "start" , action: "change->booking-price#pricing"  } }, label_html: {class:"booking-form-text"}%>
+              <%= f.input :end_date, as: :date, default: (Date.today + 8), html5: true, input_html: { data: { booking_price_target: "end" , action: "change->booking-price#pricing" } }, label_html: {class:"booking-form-text"} %>
+              <br>
+              <div>Total price: $<span data-booking-price-target="total">0.00</span>
+              </div>
+              <%= f.submit 'Book', class: 'btn-flat-nav mt-3', style: "width:100%"  %>
+            <% end %>
+          </div>
+        </div>
       </div>
-      <%= f.submit 'Book', class: 'btn btn-info mt-2', style: "width:100%"  %>
-    <% end %>
-    <%= link_to "Home", ships_path, class: "btn btn-dark mt-3 mt-2", style: "width:100%" %>
-    </div>
-  </div>
-  </div>
