@@ -8,9 +8,13 @@
     </div>
     <h1 class="show-page-header">My Ships</h1>
     <div class="cards mt-4">
-      <% @user.ships.each do |ship| %>
-        <%= render 'bookings/ship', ship: ship %>
+
+
+      <% @bookings.each do |booking| %>
+        <%= render 'owner/bookings/owner_bookings', booking: booking %>
       <% end %>
+
+
     </div>
   <% end %>
 </div>
