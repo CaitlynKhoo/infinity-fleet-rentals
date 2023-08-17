@@ -3,6 +3,26 @@ class ShipsController < ApplicationController
 
   def index
     @ships = Ship.all
+    if params[:q].present?
+      @ships = @ships.global_search(params[:q])
+    end
+
+    if params[:max_price].present?
+      @ships = @ships.where('price_per_day <= ?', params[:max_price].to_i)
+    end
+
+    if params[:min_rating].present?
+      @ships = @ships.where('rating >= ?', params[:min_rating].to_f)
+    end
+
+    if params[:min_capacity].present?
+      @ships = @ships.where('capacity >= ?', params[:min_capacity].to_i)
+    end
+
+    # If no search parameters are provided, show all ships
+    if !params[:q].present? && !params[:max_price].present? && !params[:min_rating].present? && !params[:min_capacity].present?
+      @ships = Ship.all
+    end
   end
 
   def show
