@@ -1,0 +1,37 @@
+.search-bar-container {
+  display: flex;
+  width: 700px;
+  margin: 20px;
+  margin-left: 30px;
+}
+
+.rounded-end {
+
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.rounded-start {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.search-bar-container .form-control.rounded-end {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.form-control {
+  border: none;
+  border-radius: 0; /* Optional: If you want to remove border-radius */
+}
+
+.form-control::placeholder {
+  color: #FFC051;
+  opacity: 0.5;
+}
+
+.form-control option.first-star {
+  color: #FFC051;
+  opacity: 0.5;
+}

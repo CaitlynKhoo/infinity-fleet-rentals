@@ -2,31 +2,36 @@
   <div class="container-banner">
     <h1>Infinity Fleet Rentals Offerings</h1>
     <p>Discover our captivating offers and embark on cosmic voyages now!</p>
-    <%= link_to "Rent out your own spaceship", ships_path, class: 'btn btn-flat', id: 'button-banner' %>
+    <%= render 'layouts/search_bar' %>
   </div>
+</div>
 </div>
 <div class="container">
   <div class="cards">
-    <% @ships.each do |ship| %>
-      <div class="card-trip">
-        <h2 class="card-trip-pricing">$<%=ship.price_per_day.to_i%></h2>
-        <%= link_to "", ship_path(ship), class: 'card-link' %>
-        <%= image_tag "http://source.unsplash.com/featured/?#{ship.name}>&#{rand(1000)}" %>
-        <div class="card-trip-infos">
-          <div class="card-trip-header">
-            <h2><%= ship.name %></h2>
-            <div class="d-flex">
-              <% ship.rating.round do %>
-                <i class="fa-solid fa-star"></i>
-              <% end %>
-              <% (5 - ship.rating.round).times do %>
-                <i class="fa-regular fa-star"></i>
-              <% end %>
+    <%if @ships.any?%>
+      <% @ships.each do |ship| %>
+        <div class="card-trip">
+          <%= link_to "", ship_path(ship), class: 'card-link' %>
+          <h2 class="card-trip-pricing">$<%=ship.price_per_day.to_i%></h2>
+          <%= image_tag ship.picture_1 %>
+          <div class="card-trip-infos">
+            <div class="card-trip-header">
+              <h2><%= ship.name %></h2>
+              <div class="d-flex">
+                <% ship.rating.round do %>
+                  <i class="fa-solid fa-star"></i>
+                <% end %>
+                <% (5 - ship.rating.round).times do %>
+                  <i class="fa-regular fa-star"></i>
+                <% end %>
+              </div>
             </div>
+            <p><%= truncate(ship.description, length:100) %></p>
           </div>
-          <p><%= truncate(ship.description, length:100) %></p>
         </div>
-      </div>
+      <% end %>
+    <% else %>
+      <em>Sorry, no ships found.</em>
     <% end %>
   </div>
 </div>
