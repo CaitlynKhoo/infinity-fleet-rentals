@@ -2,8 +2,9 @@
   <div class="container-banner">
     <h1>Infinity Fleet Rentals</h1>
     <p>Your Odyssey Among the Stars Begins Here!</p>
-    <%= link_to "See all ships", ships_path, class: 'btn btn-flat'  %>
+    <%= render 'layouts/search_bar' %>
   </div>
+</div>
 </div>
 <div class="subheader-page">
   <h2> Our most popular spaceships</h2>
@@ -13,7 +14,6 @@
     <% @ships.first(6).each do |ship| %>
       <div class="card-trip">
         <h2 class="card-trip-pricing">$<%=ship.price_per_day.to_i%></h2>
-        <%= link_to "", ship_path(ship), class: 'card-link' %>
         <%= image_tag ship.picture_1 %>
         <div class="card-trip-infos">
           <div class="card-trip-header">
@@ -28,6 +28,7 @@
             </div>
           </div>
           <p><%= truncate(ship.description, length:100) %></p>
+          <%= link_to "", ship_path(ship), class: 'card-link' %>
         </div>
       </div>
     <% end %>

@@ -56,7 +56,9 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100%
+  left:-5px;
+  width: 102%;
+  text-decoration: none;
 }
 
 .card-link:hover {
@@ -65,13 +67,59 @@
 
 .card-trip {
   overflow: hidden;
-  background-color:#fca311;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: #fca311;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin: 20px;
   position: relative;
   border-radius: 15px;
   backdrop-filter: blur(20px);
+  transition: box-shadow 0.3s; /* Added transition */
 }
+
+.card-trip:hover {
+  animation: shadowAnimation 2s infinite linear;
+}
+
+@keyframes shadowAnimation {
+  0%, 100% {
+    box-shadow:
+      0 0 7.5px #88c9ed,
+      0 0 15px #7ba7d9,
+      0 0 30px #5e84c7,
+      0 0 45px #3e61b6;
+  }
+
+  20% {
+    box-shadow:
+      0 0 7.5px #88c9ed,
+      0 0 15px #7ba7d9,
+      0 0 30px #5e84c7,
+      0 0 45px #3e61b6,
+      0 0 60px #2a3c99;
+  }
+
+  40% {
+    box-shadow:
+      0 0 7.5px #88c9ed,
+      0 0 15px #7ba7d9,
+      0 0 30px #5e84c7,
+      0 0 45px #3e61b6,
+      0 0 60px #2a3c99,
+      0 0 75px #1f2777;
+  }
+
+  60%, 80% {
+    box-shadow:
+      0 0 7.5px #88c9ed,
+      0 0 15px #7ba7d9,
+      0 0 30px #5e84c7,
+      0 0 45px #3e61b6,
+      0 0 60px #2a3c99,
+      0 0 75px #1f2777;
+  }
+}
+
+
 
 .card-trip > img {
   height: 500px;
@@ -111,17 +159,11 @@
 
 .card-trip .card-trip-infos {
   padding: 10px;
-  position: relative;
+  // position: relative;
   min-height: 100px;
   color: #14213d;
 }
 
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
 
 .cards {
   display: grid;
