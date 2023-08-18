@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
 
-    if @booking.rating_done == "F"
+    if @booking.status != "pending" && @booking.rating_done == "F"
       @booking.ship.rating_count += 1
       @booking.ship.rating = (params[:booking][:rating_booking].to_f +  @booking.ship.rating)/@booking.ship.rating_count
       @booking.rating_done = "Y"
