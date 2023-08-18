@@ -1,11 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://w.wallhaven.cc/full/lm/wallhaven-lmq1wr.jpg')">
-  <div class="container-banner">
-    <h1>Infinity Fleet Rentals</h1>
-    <p>Your Odyssey Among the Stars Begins Here!</p>
-    <%= render 'layouts/search_bar' %>
-  </div>
-</div>
-</div>
+ <%= render 'layouts/banner' %>
 <div class="subheader-page">
   <h2> Our most popular spaceships</h2>
 </div>
@@ -19,7 +12,7 @@
           <div class="card-trip-header">
             <h2><%= ship.name %></h2>
             <div class="d-flex">
-              <% ship.rating.round do %>
+              <% ship.rating.round.times do %>
                 <i class="fa-solid fa-star"></i>
               <% end %>
               <% (5 - ship.rating.round).times do %>

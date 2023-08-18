@@ -24,6 +24,7 @@
 .form-control {
   border: none;
   border-radius: 0; /* Optional: If you want to remove border-radius */
+  box-shadow: 0 0 5px rgba(255, 192, 81, 0.3);
 }
 
 .form-control::placeholder {

@@ -1,21 +1,17 @@
 .subheader-page {
-margin: 20px;
+margin: 30px;
 text-align: center;
 align-content: center;
-}
-.subheader-page {
-  text-align: center;
-  margin-bottom: 10px; /* Adjust the spacing as needed */
-
-  /* Add a divider line using a pseudo-element */
-  position: relative;
+margin-top: 30px;
+text-align: center;
+position: relative;
 }
 
 .subheader-page h2 {
   display: inline-block;
   background-color: #fca311;
   padding: 10px 20px;
-  border-radius: 15px;
+  border-radius: 5px;
   color: #14213d;
   font-size: 24px;
   font-family: 'Montserrat', sans-serif;
