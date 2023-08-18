@@ -3,17 +3,16 @@
   <div class="card-trip-infos">
       <h2 class="mb-2"><%= booking.ship.name%></h2>
       <p class="mb-3"><%= booking.ship.description %></p>
-      <div class="booking-date align-self-end">
-        <p><strong>Booking dates: </strong><%= booking.start_date %> - <%= booking.end_date %></p>
-      </div>
-      <% if booking.end_date < @today && booking.rating_done == "F" %>
-        <%= simple_form_for booking do |f| %>
-          <%#= f.input :rating, as: :radio_buttons, collection: [['0', '0'], ['1', 'male']], label_method: :second, value_method: :first %>
-          <%=  f.input :rating_booking, collection: 0..5, prompt: "Please rate your experience", selected: 5 %>
-          <%=  f.input :rating_comment, class: "bg-light", default: "Please rate your experience" %>
-          <%= f.submit 'Rate', class: 'btn btn-info' %>
+        <div class="booking-date align-self-end">
+          <p><strong>Booking dates: </strong><%= booking.start_date %> - <%= booking.end_date %></p>
+        </div>
+        <% if booking.end_date < @today && booking.rating_done == "F" %>
+          <%= simple_form_for booking do |f| %>
+            <%#= f.input :rating, as: :radio_buttons, collection: [['0', '0'], ['1', 'male']], label_method: :second, value_method: :first %>
+            <%=  f.input :rating_booking, collection: 0..5, prompt: "Please rate your experience", selected: 5 %>
+            <%=  f.input :rating_comment, class: "bg-light", default: "Please rate your experience" %>
+            <%= f.submit 'Rate', class: 'btn btn-info' %>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
   </div>
 </div>
