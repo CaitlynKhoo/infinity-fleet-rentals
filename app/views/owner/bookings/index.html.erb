@@ -3,3 +3,13 @@
 <% end %>
 
 <%# could delete if we not showing in different route!! %>
+<div class="container my-5">
+  <h1 class="show-page-header">My Ships</h1>
+    <div class="cards">
+      <% if user_signed_in? %>
+            <% @bookings.each do |booking| %>
+              <%= render 'owner_bookings', booking: booking %>
+            <% end %>
+        <% end %>
+    </div>
+</div>

@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
 
   def index
     @user = current_user
-
     @bookings = current_user.bookings_as_owner
   end
 
@@ -22,9 +21,9 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
-      # redirect_to # up to you...
+      redirect_to bookings_path
     else
-      # render # where was the booking update form?
+      render "bookings", status: :unprocessable_entity
     end
   end
 
