@@ -25,16 +25,6 @@ class ShipsController < ApplicationController
     end
   end
 
-  def update
-    @ship = Ship.find(params[:id])
-    raise
-    if @ship.update(ship_params)
-      # redirect_to # up to you...
-    else
-      # render # where was the booking update form?
-    end
-  end
-
   def show
     @hello = "hello"
     @ship = Ship.find(params[:id])
@@ -58,6 +48,8 @@ class ShipsController < ApplicationController
   def create
     @ship = Ship.new(ship_params)
     @ship.user_id = current_user.id
+    @ship.rating_count = 0
+    @ship.rating = 0.0
     if @ship.save
       redirect_to ships_path
     else
@@ -69,7 +61,7 @@ class ShipsController < ApplicationController
   private
 
   def ship_params
-    params.require(:ship).permit(:name, :description, :capacity, :price_per_day, :rating, :body, photos: [], :rating)
+    params.require(:ship).permit(:name, :description, :capacity, :price_per_day, :rating, :body, photos: [])
   end
 
 end

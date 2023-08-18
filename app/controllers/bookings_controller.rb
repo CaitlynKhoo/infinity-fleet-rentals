@@ -22,16 +22,22 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
+
+    if @booking.rating_done == "F"
+      @booking.ship.rating_count += 1
+      @booking.ship.rating = (params[:booking][:rating_booking].to_f +  @booking.ship.rating)/@booking.ship.rating_count
+      @booking.rating_done = "Y"
+    end
     if @booking.update(booking_params)
-      # redirect_to # up to you...
+      redirect_to bookings_path
     else
-      # render # where was the booking update form?
+      render "bookings", status: :unprocessable_entity
     end
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :status)
+    params.require(:booking).permit(:start_date, :end_date, :status, :rating_booking, :rating_comment)
   end
 end
