@@ -8,4 +8,8 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:update, :index ]
   get 'my_ships', to: 'ships#user_index'
+
+  namespace :owner do
+    resources :bookings, only: [:index]
+  end
 end
