@@ -74,6 +74,7 @@
   margin: 20px;
   position: relative;
   border-radius: 5px;
+  // background-size: contain;
   backdrop-filter: blur(20px);
   transition: box-shadow 0.3s; /* Added transition */
 }
@@ -165,6 +166,10 @@
   // position: relative;
   min-height: 100px;
   color: #14213d;
+}
+
+.card-trip .card-trip-infos p{
+  padding-top: 10px;
 }
 
 

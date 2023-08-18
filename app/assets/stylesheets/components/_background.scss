@@ -1,5 +1,8 @@
 body {
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 p {
@@ -37,4 +40,8 @@ h3 {
 .booking-form-text {
   font-family: 'Montserrat', sans-serif;
   color:#14213d;
+}
+
+.text-bold {
+  font-weight: bold;
 }

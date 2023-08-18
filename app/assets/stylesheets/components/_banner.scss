@@ -14,6 +14,7 @@
   font-size: 32px;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 
 .banner p {
@@ -36,20 +37,22 @@
 
 .content-overlay {
   position: absolute;
-  bottom: 10%; /* Adjust this value to control the vertical position */
-
-  width: 90%; /* Adjust the width as needed */
-  height: auto; /* Let the height adjust automatically based on content */
+  top: 20%; /* Vertically center the overlay */
+  left: 50%; /* Horizontally center the overlay */
+  transform: translate(-50%, -50%); /* Adjust to center the overlay perfectly */
+  width: 90%;
+  height: auto;
   display: flex;
+  text-align: center;
   flex-direction: column;
-  justify-content: flex-start; /* Change to flex-start to align items to the left */
-  align-items: flex-start; /* Change to flex-start to align items to the left */
+  justify-content: center;
+  align-items: center;
   z-index: 1;
 }
 
 .container-banner {
-  text-align: left; /* Adjust alignment of text to the left */
+  text-align: left;
   color: white;
-  z-index: 2; /* Ensure the content is on top of the overlay */
-  position: relative; /* For proper stacking context */
+  z-index: 2;
+  position: relative;
 }
