@@ -1,6 +1,5 @@
 <div class="container">
-  <br>
-  <h1 style="color: white">Add a Spaceship to your Hangar</h1>
+  <h1 class="login-page-header">Add a Spaceship to your Hangar</h1>
   <div class="col-6">
     <%= simple_form_for [@ship] do |f| %>
       <%= f.input :name, as: :string%>
@@ -8,7 +7,7 @@
       <%= f.input :capacity, as: :integer%>
       <%= f.input :price_per_day, as: :integer%>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.button :submit , class: "btn btn-light"%>
+     <%= f.button :submit , class: "btn-flat "%>
     <% end %>
   </div>
 </div>

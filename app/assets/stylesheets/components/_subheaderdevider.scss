@@ -9,13 +9,13 @@ position: relative;
 
 .subheader-page h2 {
   display: inline-block;
-  background-color: #fca311;
   padding: 10px 20px;
   border-radius: 5px;
-  color: #14213d;
+  color: #fca311;
   font-size: 24px;
   font-family: 'Montserrat', sans-serif;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-weight: bolder;
 }
 
 .subheader-page::after {
