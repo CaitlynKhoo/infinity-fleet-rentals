@@ -1,11 +1,7 @@
 <div class="card-trip">
-  <%= ship.picture_1.present? ? image_tag(ship.picture_1) : cl_image_tag(ship.photos[0].blob.key, height: 200, width: 300, crop: :fill) %>
-  <div class="card-content">
-    <h2><%= ship.name %></h2>
-    <p><%= ship.description %></p>
-    <%# <div class="button mt-3">
-      <button type="button" class="btn btn-success">Accept</button>
-      <button type="button" class="btn btn-secondary">Reject</button>
-    </div> %>
+  <%= image_tag(ship.picture_1) %>
+  <div class="card-trip-infos">
+      <h2 class="mb-2"><%= ship.name %></h2>
+      <p class="mb-3"><%= ship.description %></p>
   </div>
 </div>
