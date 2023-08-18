@@ -6,7 +6,7 @@
         <div class="card-trip">
           <%= link_to "", ship_path(ship), class: 'card-link' %>
           <h2 class="card-trip-pricing">$<%=ship.price_per_day.to_i%></h2>
-          <%= image_tag ship.picture_1 %>
+          <%= ship.picture_1.present? ? image_tag(ship.picture_1) : cl_image_tag(ship.photos[0].blob.key, height: 200, width: 300, crop: :fill) %>
           <div class="card-trip-infos">
             <div class="card-trip-header">
               <h2><%= ship.name %></h2>
