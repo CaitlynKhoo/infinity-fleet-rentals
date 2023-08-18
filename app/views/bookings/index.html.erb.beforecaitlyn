@@ -1,0 +1,16 @@
+<div class="container my-5">
+  <% if user_signed_in? %>
+    <h1 class="show-page-header">My Dibs</h1>
+    <div class="cards mt-4">
+      <% @user.bookings.each do |booking| %>
+        <%= render 'bookings/dib', booking: booking %>
+      <% end %>
+    </div>
+    <h1 class="show-page-header">My Ships</h1>
+    <div class="cards mt-4">
+      <% @user.ships.each do |ship| %>
+        <%= render 'bookings/ship', ship: ship %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

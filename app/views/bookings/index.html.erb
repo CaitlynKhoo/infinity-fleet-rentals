@@ -1,27 +1,51 @@
-<div class="container my-5">
-    <h1 class="show-page-header">My Dibs</h1>
-
-    <div class="cards">
-      <% if user_signed_in? %>
-          <% @user.bookings.each do |booking| %>
-            <%= render 'bookings/dib', booking: booking %>
-          <% end %>
-      <% end %>
+<ul class="nav tabs-underlined" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <span class="nav-link tab-underlined active" id="bookings-tab" data-bs-toggle="tab" data-bs-target="#bookings-tab-pane" role="tab" aria-controls="bookings-tab-pane" aria-selected="true">Bookings</span>
+  </li>
+  <li class="nav-item" role="presentation">
+    <span class="nav-link tab-underlined" id="requests-tab" data-bs-toggle="tab" data-bs-target="#requests-tab-pane" role="tab" aria-controls="requests-tab-pane" aria-selected="false">Requests</span>
+  </li>
+  <li class="nav-item" role="presentation">
+    <span class="nav-link tab-underlined" id="listings-tab" data-bs-toggle="tab" data-bs-target="#listings-tab-pane" role="tab" aria-controls="listings-tab-pane" aria-selected="false">Listings</span>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade py-3 show active" id="bookings-tab-pane" role="tabpanel" aria-labelledby="bookings-tab" tabindex="0">
+    <div class="container my-5">
+      <h1 class="show-page-header">My Bookings</h1>
+      <div class="cards">
+        <% if user_signed_in? %>
+            <% @user.bookings.each do |booking| %>
+              <%= render 'bookings/dib', booking: booking %>
+            <% end %>
+        <% end %>
+      </div>
     </div>
+  </div>
 
-
-
-
-    <h1 class="show-page-header">My Ships</h1>
-    <div class="cards">
-      <% if user_signed_in? %>
-          <% @bookings.each do |booking| %>
-            <%= render 'owner/bookings/owner_bookings', booking: booking %>
-          <% end %>
-      <% end %>
+  <div class="tab-pane fade py-3" id="requests-tab-pane" role="tabpanel" aria-labelledby="requests-tab" tabindex="0">
+    <div class="container my-5">
+      <h1 class="show-page-header">My Requests</h1>
+      <div class="cards">
+        <% if user_signed_in? %>
+            <% @bookings.each do |booking| %>
+              <%= render 'owner/bookings/owner_bookings', booking: booking %>
+            <% end %>
+        <% end %>
+      </div>
     </div>
+  </div>
 
-
-
-
+  <div class="tab-pane fade py-3" id="listings-tab-pane" role="tabpanel" aria-labelledby="listings-tab" tabindex="0">
+    <div class="container my-5">
+      <h1 class="show-page-header">My Listings</h1>
+      <div class="cards">
+        <% if user_signed_in? %>
+            <% @user.ships.each do |ship| %>
+              <%= render 'bookings/ship', ship: ship %>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

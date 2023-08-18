@@ -36,8 +36,8 @@ class ShipsController < ApplicationController
     #   redirect_to ships_path
     # else
     # @ships = Ship.where(user_id: current_user.id)
-    @user = User.find(1)
-    @ships = Ship.where(user_id: 1)
+    @user = User.find(current_user.id)
+    @ships = Ship.where(user_id: @user)
     # end
   end
 
@@ -48,8 +48,10 @@ class ShipsController < ApplicationController
   def create
     @ship = Ship.new(ship_params)
     @ship.user_id = current_user.id
+    @ship.rating_count = 0
+    @ship.rating = 0.0
     if @ship.save
-      redirect_to ships_path
+      redirect_to ship_path(@ship.id)
     else
       # raise
       render :new, status: :unprocessable_entity

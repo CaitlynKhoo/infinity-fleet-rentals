@@ -38,3 +38,6 @@
 .DS_Store
 .env*
 .env*
+
+#Ignore database.yml, as mine is seperate setup for postgres in windows. No one else needs it in the team. So do not push.
+/config/database.yml
