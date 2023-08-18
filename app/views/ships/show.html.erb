@@ -4,11 +4,22 @@
       <h1 class="show-page-header"><strong><%= @ship.name%></strong></h1>
   </div>
 
-  <div class="big-display">
-    <div class="card-category" style="width: 300px; height: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=@ship.picture_1%>)"></div>
-    <div class="card-category" style="width: 300px; height: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=@ship.picture_2%>)"></div>
-    <div class="card-category" style="width: 300px; height: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=@ship.picture_3%>)"></div>
-  </div>
+ <% if @ship.picture_1.present?%>
+      <div class="big-display">
+        <div class="card-category" style="width: 300px; height: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=@ship.picture_1%>)"></div>
+        <div class="card-category" style="width: 300px; height: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=@ship.picture_2%>)"></div>
+        <div class="card-category" style="width: 300px; height: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=@ship.picture_3%>)"></div>
+      </div>
+    <%else%>
+      <div class="big-display">
+        <% @ship.photos.each do |picture| %>
+          <% photo = picture.record %>
+          <div class="card-category" style="width: 300px; height: 200px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+            <%= cl_image_tag picture.blob.key, height: 200, width: 300, crop: :fill %>
+          </div>
+        <%end%>
+      </div>
+    <% end %>
 
   <div class="d-flex">
     <div class="box col-8">

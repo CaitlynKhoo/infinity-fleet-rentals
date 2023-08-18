@@ -14,6 +14,8 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 20px;
+  border: solid;
+  border-color: #fca311;
 }
 
 .card-product {
@@ -29,7 +31,7 @@
 .card-product img {
   height: 100%;
   width: 120px;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .card-product h2 {
@@ -71,7 +73,7 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin: 20px;
   position: relative;
-  border-radius: 15px;
+  border-radius: 5px;
   backdrop-filter: blur(20px);
   transition: box-shadow 0.3s; /* Added transition */
 }
@@ -79,6 +81,7 @@
 .card-trip:hover {
   animation: shadowAnimation 2s infinite linear;
 }
+
 
 @keyframes shadowAnimation {
   0%, 100% {
@@ -136,7 +139,7 @@
 
 .card-trip p {
   font-size: 12px;
-  opacity: .7;
+  // opacity: .7;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
 }

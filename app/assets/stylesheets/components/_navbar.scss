@@ -1,4 +1,6 @@
 .navbar-lewagon {
+  position: relative;
+  z-index: 2; /* Set a higher z-index to make the navbar appear on top */
   justify-content: space-between;
   background: #fca311;
   margin-right: 15px;
@@ -16,6 +18,7 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
 
 .btn-flat-nav {
   color: #fca311;
@@ -52,6 +55,45 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.dropdown-item:hover {
+  background-color: #fca311;
+  color:#14213d ;
+}
+
 .dropdown-menu {
   background-color:#14213d;
+}
+
+.bar {
+  position: relative;
+  display: inline-block; /* Ensure the pseudo-element respects the element's width */
+  font-weight: bold;
+  color: #14213d;
+  text-decoration: none;
+  padding-bottom: 4px; /* Add padding to create space for the line */
+}
+
+.bar {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  color: #14213d;
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+
+.bar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #14213d;
+  transition: width 0.3s ease-in-out;
+}
+
+.bar:hover::after {
+  width: 50%; /* Max size of the line is 50% */
 }

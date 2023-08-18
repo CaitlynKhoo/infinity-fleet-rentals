@@ -1,6 +1,6 @@
 <div class="card-trip">
-    <%= image_tag(booking.ship.picture_1) %>
-    <div class="card-trip-infos">
+  <%= image_tag(booking.ship.picture_1) %>
+  <div class="card-trip-infos">
       <h2 class="mb-2"><%= booking.ship.name%></h2>
       <p class="mb-3"><%= booking.ship.description %></p>
       <div class="booking-date align-self-end">
@@ -13,8 +13,6 @@
           <%= f.submit 'Rate', class: 'btn btn-info' %>
         <% end %>
       <% end %>
-
-
     </div>
   </div>
 </div>

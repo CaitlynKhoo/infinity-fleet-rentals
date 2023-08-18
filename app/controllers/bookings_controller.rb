@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   def index
     @user = current_user
     @today = Date.today
+    @bookings = current_user.bookings_as_owner
   end
 
   def create
@@ -31,6 +32,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :status)
   end
 end

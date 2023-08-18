@@ -1,10 +1,27 @@
 <div class="container my-5">
-  <h1 class="show-page-header">My Dibs</h1>
-  <div class="cards">
-    <% if user_signed_in? %>
-        <% @user.bookings.each do |booking| %>
-          <%= render 'bookings/dib', booking: booking %>
-        <% end %>
-    <% end %>
-  </div>
+    <h1 class="show-page-header">My Dibs</h1>
+
+    <div class="cards">
+      <% if user_signed_in? %>
+          <% @user.bookings.each do |booking| %>
+            <%= render 'bookings/dib', booking: booking %>
+          <% end %>
+      <% end %>
+    </div>
+
+
+
+
+    <h1 class="show-page-header">My Ships</h1>
+    <div class="cards">
+      <% if user_signed_in? %>
+          <% @bookings.each do |booking| %>
+            <%= render 'owner/bookings/owner_bookings', booking: booking %>
+          <% end %>
+      <% end %>
+    </div>
+
+
+
+
 </div>

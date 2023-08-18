@@ -1,6 +1,7 @@
 require 'date'
 require 'faker'
 require 'uri'
+require "open-uri"
 
 Booking.destroy_all
 Ship.destroy_all
@@ -154,20 +155,27 @@ descriptions = [
 ]
 
 
+#  ====================================================
+# 3.times
+#   file = URI.open("#{ship_pictures_1[i-1]")
+#   article.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+
+#   # =====================================================
+# end
+
 10.times do |i|
   user_id = users[i].id
   ship = Ship.new(
     user_id: user_id,
-    # description: Faker::Lorem.paragraph_by_chars(number: rand(1000..2200)),
     capacity: rand(1..500),
     price_per_day: rand(5..50) * 10,
     rating: rand(1.0..5.0),
   )
   ship.name = ship_names[i-1]
+  ship.description = descriptions[i-1]
   ship.picture_1 = ship_pictures_1[i-1]
   ship.picture_2 = ship_pictures_2[i-1]
   ship.picture_3 = ship_pictures_3[i-1]
-  ship.description = descriptions[i-1]
 
 
   if ship.save
