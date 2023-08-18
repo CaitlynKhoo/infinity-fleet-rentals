@@ -1,0 +1,42 @@
+<div class="search">
+  <%= form_with url: ships_path, method: :get, class: "search" do %>
+    <div class="search-bar-container">
+      <%= text_field_tag :q,
+        params[:q],
+        class: "form-control rounded-start",
+        placeholder: "Deathstar..."
+    %>
+      <%= number_field_tag :max_price,
+        params[:max_price],
+        class: "form-control",
+        placeholder: "Max Price",
+        min: 0
+    %>
+      <div class="d-flex flex-column justify-content-center mx-2 pb-1">
+        <div class="star-rating d-flex">
+          <input type="radio" name="min_rating" value="1" checked/>
+          <input type="radio" name="min_rating" value="2" />
+          <input type="radio" name="min_rating" value="3" />
+          <input type="radio" name="min_rating" value="4" />
+          <input type="radio" name="min_rating" value="5" />
+        </div>
+      </div>
+      <%# <select name="min_rating" id="min_rating" class="form-control" >
+        <option value="" disabled="disabled">Min Rating</option>
+        <option value="1">★☆☆☆☆</option>
+        <option value="2">★★☆☆☆</option>
+        <option value="3">★★★☆☆</option>
+        <option value="4">★★★★☆</option>
+        <option value="5">★★★★★</option></select> %>
+      <%= number_field_tag :min_capacity,
+        params[:min_capacity],
+        class: "form-control rounded-end",
+        placeholder: "Min Capa..",
+        min: 0
+    %>
+    </div>
+    <div class="d-flex flex-column justify-content-center">
+      <%= submit_tag "Search", class: 'btn btn-flat-search m-0'  %>
+    </div>
+  <% end %>
+</div>
