@@ -1,21 +1,19 @@
 .space {
   position: relative;
   display: block;
-  height: 100vh;
+  height: 60vh;
   width: 100%;
-  background-color: #1B2735;
-  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  background: linear-gradient(to bottom, #1B2735, #000); /* Change the background to a gradient that fades from the dark blue to black */
   color: white;
-  padding-top: 20vh;
 }
-.stars {
 
+.stars {
 }
 
 .stars > div {
   overflow: hidden;
   position: absolute;
-  top: 0;
+  top: -150px; /* Start from 150px above the screen */
   bottom: 0;
   left: 0;
   right: 0;
@@ -30,25 +28,31 @@
     radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
     radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
   background-repeat: repeat;
-  background-size: 300px 300px;
-  animation: stars 4s infinite linear;
+  background-size: 700px 300px;
+  animation: stars 160s infinite linear;
 }
 
 .stars .stars-middle {
+  padding-top: 150px 0;
   background-image:
     radial-gradient(3px 3px at 50px 160px, #ddd, rgba(0,0,0,0)),
     radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
     radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0));
   background-repeat: repeat;
   background-size: 200px 200px;
-  animation: stars 2.5s infinite linear;
+  animation: stars 40s infinite linear;
 }
 
+/* Rest of the code remains the same */
+
+
 .rocket {
-  position: relative;
-  width: 50px;
-  margin: 0 auto;
-  transition: transform .2s ease-in-out;
+  position: absolute;
+  width: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 25%;
+  transition: transform 0.2s ease-in-out 0.1s; /* Add a 0.1s delay */
 }
 
 .fuselage {
@@ -64,9 +68,9 @@
 }
 
 .head {
-  possition: relative;
+  position: relative;
   display:block;
-  border-bottom: 25px solid white;
+  border-bottom: 25px solid #FFC65A;
 	border-left: 10px solid transparent;
 	border-right: 10px solid transparent;
 	height: 0;
@@ -90,7 +94,7 @@
   width: 45px;
   height: 30px;
   margin: 0 auto;
-  background: #f4f4f4;
+  background: #FFC65A;
 
   &:after{
     position: absolute;
@@ -99,7 +103,7 @@
     content: '';
     width: 22.5px;
     height: 30px;
-    background: #e0e0e0;
+    background: #CCAC62
   }
 }
 
@@ -107,8 +111,8 @@
   position: relative;
   width: 50px;
   height: 120px;
-  background: #f4f4f4;
-  border-bottom: 3px solid #a81237;
+  background: #FFC65A; /* Change the color to a shade of yellow */
+  border-bottom: 3px solid #a81237; /* Change the color to a shade of red */
   border-top: 3px solid #a81237;
 
   &:after{
@@ -117,8 +121,9 @@
     right: 0;
     content: '';
     width: 25px;
-    height: 120px;
-    background: #e0e0e0;
+    height: 115px;
+    background: #CCAC62;
+    border-bottom: 1.3px solid #a81237;
   }
 }
 
@@ -215,14 +220,14 @@
   top : 73px;
   right: 50px;
   width: 5px;
-  border-bottom: 110px solid white;
+  border-bottom: 110px solid #FFC65A;
 	border-left: 60px solid transparent;
 
   &-end{
     position: absolute;
     top : 113px;
     right: 70px;
-    border-bottom: 70px solid white;
+    border-bottom: 70px solid #FFC65A;
     border-left: 70px solid transparent;
     border-top-left-radius: 50%;
     border-bottom-left-radius: 10%;
@@ -234,7 +239,7 @@
   top : 73px;
   left: 50px;
   width: 5px;
-  border-bottom: 110px solid white;
+  border-bottom: 110px solid #FFC65A;
 	border-right: 60px solid transparent;
 
 
@@ -242,7 +247,7 @@
     position: absolute;
     top : 113px;
     left: 70px;
-    border-bottom: 70px solid white;
+    border-bottom: 70px solid #FFC65A;
     border-right: 70px solid transparent;
     border-bottom-right-radius: 10%;
   }
@@ -254,7 +259,7 @@
     top : 0;
     left: 0;
     width: 4px;
-    border-bottom: 110px solid #c4c4c4;
+    border-bottom: 110px solid #CCAC62;
     border-right: 10px solid transparent;
   }
 }
@@ -340,9 +345,9 @@
 
 @keyframes stars {
   0% {
-    top: -100%;
+    transform: translateY(0);
   }
   100% {
-    top: 0;
+    transform: translateY(100%);
   }
 }

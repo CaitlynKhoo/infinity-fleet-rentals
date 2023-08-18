@@ -29,7 +29,7 @@
 .card-product img {
   height: 100%;
   width: 120px;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .card-product h2 {
@@ -79,6 +79,7 @@
 .card-trip:hover {
   animation: shadowAnimation 2s infinite linear;
 }
+
 
 @keyframes shadowAnimation {
   0%, 100% {
