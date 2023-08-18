@@ -1,0 +1,8 @@
+<div class="card-trip">
+  <%= image_tag "spaceship2.jpeg" %>
+  <div class="card-content">
+      <h2><%= booking.ship.name %></h2>
+      <p><%= booking.ship.description %></p>
+      <p><%= booking.start_date %> - <%= booking.end_date %></p>
+  </div>
+</div>

@@ -48,6 +48,8 @@ class ShipsController < ApplicationController
   def create
     @ship = Ship.new(ship_params)
     @ship.user_id = current_user.id
+    @ship.rating_count = 0
+    @ship.rating = 0.0
     if @ship.save
       redirect_to ships_path
     else
