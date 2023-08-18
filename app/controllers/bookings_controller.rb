@@ -2,7 +2,6 @@ class BookingsController < ApplicationController
 
   def index
     @user = current_user
-
     @bookings = current_user.bookings_as_owner
   end
 
