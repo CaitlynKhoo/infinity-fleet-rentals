@@ -41,4 +41,25 @@ class ShipsController < ApplicationController
     # end
   end
 
+  def new
+    @ship = Ship.new
+  end
+
+  def create
+    @ship = Ship.new(ship_params)
+    @ship.user_id = current_user.id
+    if @ship.save
+      redirect_to ships_path
+    else
+      # raise
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def ship_params
+    params.require(:ship).permit(:name, :description, :capacity, :price_per_day, :rating, :body, photos: [])
+  end
+
 end
