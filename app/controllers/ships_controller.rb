@@ -25,6 +25,16 @@ class ShipsController < ApplicationController
     end
   end
 
+  def update
+    @ship = Ship.find(params[:id])
+    raise
+    if @ship.update(ship_params)
+      # redirect_to # up to you...
+    else
+      # render # where was the booking update form?
+    end
+  end
+
   def show
     @hello = "hello"
     @ship = Ship.find(params[:id])
@@ -41,4 +51,9 @@ class ShipsController < ApplicationController
     # end
   end
 
+  private
+
+  def ship_params
+    params.require(:ship).permit(:rating)
+  end
 end

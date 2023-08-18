@@ -1,8 +1,20 @@
 <div class="card-trip">
-  <%#= image_tag "spaceship2.jpeg" %>
-  <div class="card-content">
-      <h2><%= booking.ship.name %></h2>
-      <p><%= booking.ship.description %></p>
-      <p><%= booking.start_date %> - <%= booking.end_date %></p>
+    <%= image_tag(booking.ship.picture_1) %>
+    <div class="card-trip-infos">
+      <h2 class="mb-2"><%= booking.ship.name%></h2>
+      <p class="mb-3"><%= booking.ship.description %></p>
+      <div class="booking-date align-self-end">
+        <p><strong>Booking dates: </strong><%= booking.start_date %> - <%= booking.end_date %></p>
+      </div>
+      <% if booking.end_date < @today && booking.rating_done == "F" %>
+        <%= simple_form_for booking.ship do |f| %>
+          <%#= f.input :rating, as: :radio_buttons, collection: [['0', '0'], ['1', 'male']], label_method: :second, value_method: :first %>
+          <%=  f.input :rating, collection: 0..5, prompt: "Please rate your experience", selected: 5 %>
+          <%= f.submit 'Rate', class: 'btn btn-info' %>
+        <% end %>
+      <% end %>
+
+
+    </div>
   </div>
 </div>

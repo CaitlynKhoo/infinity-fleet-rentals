@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
 
   def index
     @user = current_user
+    @today = Date.today
   end
 
   def create
@@ -10,12 +11,21 @@ class BookingsController < ApplicationController
     @booking.status = "pending"
     @booking.ship = @ship
     @booking.user = current_user
+    @booking.rating_done = "F"
     if @booking.save
       redirect_to bookings_path
     else
       render "ships/show", status: :unprocessable_entity
     end
+  end
 
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      # redirect_to # up to you...
+    else
+      # render # where was the booking update form?
+    end
   end
 
   private
